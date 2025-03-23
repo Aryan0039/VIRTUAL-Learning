@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna College - Learn & Become a Software Developer</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+     <style>
+        /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+    background: #ffffff; /* White background for the body */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #251d7f; /* Dark background for header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #6674CC; /* Accent blue for logo */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #6674CC;
+}
+
+.signup-btn {
+    background: #6674CC;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 20px;
+    background: #e7e0e0; /* White background for hero section */
+    color: #251d7f; /* Dark text color for contrast */
+}
+
+.hero-content {
+    text-align: left;
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #6674CC; /* Highlighted text color */
+}
+
+.placement-btn {
+    background: #6674CC;
+    color: white; /* White text on placement button */
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.placement-btn:hover {
+    background: #364bc5; /* Darker blue on hover */
+}
+
+.mentor-img {
+    width: 77%; /* Image takes up 55% of the hero section */
+    max-width: 950px; /* Optional: Set a max width to prevent it from getting too large */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Stats Section */
+.stats {
+    background: #6674CC; /* Accent color for stats section */
+    padding: 80px 20px;
+    color: white;
+}
+
+.stats h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.stats-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.stat-label {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Placement Section */
+.placement {
+    background: #251d7f; /* Dark background for placement section */
+    padding: 80px 20px;
+    color: white;
+}
+
+.placement h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.placement p {
+    font-size: 18px;
+}
+
+.explore-btn {
+    background: #6674CC;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.explore-btn:hover {
+    background: #364bc5;
+}
+
+/* Companies Section */
+.companies {
+    background: #e7e0e0; /* Accent color for companies section */
+    padding: 80px 20px;
+    color: rgb(32, 35, 197);
+}
+
+.companies h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.company-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.company-logos img {
+    width: 120px;
+    height: auto;
+    max-width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.company-logos img:hover {
+    transform: scale(1.1);
+}
+
+.more {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+/* Footer Section */
+.footer {
+    background:#6674CC; /* Dark background for footer */
+    padding: 60px 20px;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    text-align: left;
+}
+
+.footer-logo h2 {
+    font-size: 28px;
+}
+
+.black-text {
+    color: white;
+    font-weight: bold;
+}
+
+.blue-text {
+    color: #D3D3D3;
+    font-weight: bold;
+}
+
+.footer-links, .footer-contact, .footer-social {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-links h3, .footer-contact h3, .footer-social h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 10px 0;
+}
+
+.footer-links ul li a, .footer-contact p a, .social-link {
+    text-decoration: none;
+    color: #D3D3D3; /* Link color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover, .footer-contact p a:hover, .social-link:hover {
+    color: #364bc5;
+}
+
+.footer-contact p, .social-link {
+    margin: 10px 0;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+     </style>
+</head>
+<body>
+    <header>
+        <div class="logo">VIRTUAL <span>Learning</span></div>
+        <nav>
+            <a href="coming soon.html">New Sigma 7.0</a>
+            <a href="coming soon.html">DSA Sheet</a>
+            <a href="coming soon.html">New Courses</a>
+            <a href="login.html">Log in</a>
+            <a href="register.html" class="signup-btn">Sign up</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Learn & become the <br> <span class="highlight">Top 1% software developer</span></h1>
+            <!-- <p>Alpha - I</p> -->
+             <a href="login.html">
+                <button class="placement-btn">Ultimate Placement Solution →</button>
+             </a>
+            
+        </div>
+        <img src="https://img.freepik.com/premium-vector/virtual-learning-education-vector-template-design-back-school-virtual-learning-text-with-laptop_572293-4877.jpg?w=1380" alt="Mentor Teaching" class="mentor-img">
+    </section>
+
+    <section class="stats">
+        <h2>INDIA'S MOST LOVED CODING COMMUNITY ❤️</h2>
+        <div class="stats-info">
+            <div class="stat-item">
+                <p class="stat-number">6,000,000+</p>
+                <p class="stat-label">HAPPY LEARNERS</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-number">2 CRORE+</p>
+                <p class="stat-label">MONTHLY VIEWS</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-number">100,000+</p>
+                <p class="stat-label">NEW MONTHLY SUBSCRIBERS</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="placement">
+        <h3>NEW PLACEMENT PREP BATCH🔥</h3>
+        <p><strong>SIGMA 7.0: DSA + DEVELOPMENT + APTITUDE</strong></p>
+        <p>Start your placement preparation today!</p>
+        <a href="login.html">
+            <button class="explore-btn">Explore more →</button>
+        </a>
+        
+    </section>
+
+    <section class="companies">
+        <h2>Thousands of students achieved their <span class="highlight">dream job at</span></h2>
+        <div class="company-logos">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/ec5be16b046b62a2a860b67f9dc55b86.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1183" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/ee17a1d06126f8bfc5444ad666e8ba21.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1184" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/9e4198383730a6e7036b2c7cf50554d0.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1185" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/5a5a608278ba2b74aff5fb081f7df81c.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1186" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/02fb63567e1b107d549d5d15e922424b.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1187" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/4d6e24add7d7c5d618aeef1795dba038.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1188" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/622a116daf32436d38271cd6c49ee3af.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1189" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/cfe53c7856b98c0bf010ebcfc8cbfa29.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1190" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/91cb8fef8fe424a1ae2406aa58a380d8.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1191" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/689bf09a2c1040423fba7a8db0248211.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1192" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/b5070669b92945ffb20fadc3ea552d16.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1193" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/0f683ab474c5a018baa3bdd53330c9ae.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1194" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/e24ce5f542c45a73c05172d9c4f38e2e.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1202" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/f271b7c4e1a5c41745580804a2b2b458.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1203" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/2c6580da38af7ceff65addfda59f06b9.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1204" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/1da11f6f0c244abc5abffc0556730e91.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1205" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/f226d6ddcb4f38c2c23f02008bbdf737.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1206" width="1920" height="1080">
+            <img loading="lazy" src="https://lwfiles.mycourse.app/62a6cd5e1e9e2fbf212d608d-public/9a47085894be9870158c9ad4e23c1a24.png" class="learnworlds-image learnworlds-element lw-logo js-change-image-node" data-node-type="image" id="el_1697997438894_1207" width="1920" height="1080">
+        </div>
+        <p class="more">+ many more</p>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2><span class="black-text">VIRTUAL</span> <span class="blue-text">Learning</span></h2>
+                <p>Where education meets real-world needs.</p>
+            </div>
+            <div class="footer-links">
+                <h3>HELPFUL LINKS</h3>
+                <ul>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>GET IN TOUCH</h3>
+                <p>📧 <a href="mailto:alpha@apnacollege.in">My@Tutorial.in</a></p>
+                <p>📧 <a href="mailto:delta@apnacollege.in">delta@My_Tutorial.in.in</a></p>
+                <p>📧 <a href="mailto:sigma@apnacollege.in">sigma@My_Tutorial.in.in</a></p>
+                <p>🕒 Support Team: 10am - 6pm</p>
+            </div>
+            <div class="footer-social">
+                <h3>CONNECT WITH US</h3>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">YouTube</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2025</p>
+        </div>
+    </footer>
+    
+    <!-- <script src="index.js"></script> -->
+     <script>
+        // Function to check if the user is logged in
+        function isUserLoggedIn() {
+            return localStorage.getItem('isLoggedIn') === 'true';
+        }
+    
+        // Redirect to Home Page if logged in, else to Login Page
+        function handleButtonClick(redirectPage) {
+            if (isUserLoggedIn()) {
+                window.location.href = redirectPage; // Redirect to Home Page
+            } else {
+                window.location.href = 'login.html'; // Redirect to Login Page
+            }
+        }
+    
+        // Attach event listeners to buttons
+        document.querySelector('.placement-btn').addEventListener('click', () => {
+            handleButtonClick('Home Page.html');
+        });
+    
+        document.querySelector('.explore-btn').addEventListener('click', () => {
+            handleButtonClick('Home Page.html');
+        });
+    </script>
+</body>
+</html>

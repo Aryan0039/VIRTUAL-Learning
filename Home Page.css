@@ -1,0 +1,421 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Dynamic Gradient Background */
+body {
+    background: linear-gradient(-45deg, #6a11cb, #2575fc, #00d2ff, #4facfe);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: #333;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's above everything */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 80px; /* Set a fixed height for the navbar */
+}
+
+nav .logo {
+    width: 150px;
+}
+
+nav .nav-middle input {
+    width: 250px;
+    padding: 10px;
+    margin-right: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+nav .nav-middle input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+nav .nav-middle input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+nav .nav-right img {
+    width: 25px;
+    margin-left: 20px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+nav .nav-right img:hover {
+    transform: scale(1.2);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background: rgba(44, 62, 80, 0.8);
+    backdrop-filter: blur(10px);
+    width: 250px;
+    height: calc(100vh - 80px); /* Adjusted height to account for the navbar */
+    position: fixed;
+    top: 80px; /* Positioned below the navbar */
+    left: 0;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    display: block;
+    padding: 20px;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #00d2ff;
+}
+
+/* Main Content Styles */
+.container {
+    margin-left: 270px;
+    padding: 30px;
+    padding-top: 100px; /* Added padding to prevent content from being blocked by the navbar */
+}
+
+.banner {
+    width: 100%;
+    height: 400px;
+    background: url('https://img.freepik.com/premium-vector/virtual-learning-education-vector-template-design-back-school-virtual-learning-text-with-laptop_572293-4877.jpg?w=1380') center center no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.banner:hover {
+    transform: scale(1.02);
+}
+
+.content-platform {
+    margin-top: 20px;
+}
+
+.content-platform h2 {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollable container for each section */
+.list-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.vid-list {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 300px;
+    scroll-snap-align: start;
+    cursor: pointer;
+}
+
+.vid-list:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px 15px 0 0;
+}
+
+.vid-info {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.vid-info a {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.vid-info a:hover {
+    color: #2575fc;
+}
+
+.vid-info p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.vid-info p:last-child {
+    color: #888;
+}
+
+/* Bottom Navigation Bar Styles */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bar-item {
+    text-align: center;
+}
+
+.bar-item img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.bar-item img:hover {
+    transform: scale(1.2);
+}
+
+/* Adding custom scrollbar styles */
+.list-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+.list-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+
+    .container {
+        margin-left: 0;
+        padding: 15px;
+        padding-top: 100px; /* Adjusted padding for mobile */
+    }
+
+    nav .nav-middle input {
+        width: 180px;
+    }
+
+    nav .logo {
+        width: 120px;
+    }
+
+    .list-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Upcoming courses */
+.video-container {
+    width: 100%;
+    height: 180px; /* Adjust height as needed */
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 15px 15px 0 0; /* Matches the iframe's border radius */
+    position: relative; /* Ensures the container is positioned correctly */
+}
+
+
+/* Result Not Found */
+#resultNotFound {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+
+
+
+
+/* Companies Section */
+.companies {
+    background: #f0ecec; /* Accent color for companies section */
+    padding: 80px 20px;
+    /* color: rgb(18, 22, 218); */
+    text-emphasis-color: rgb(18, 22, 218);
+    text-align: center;
+}
+/* Companies Section */
+.companies h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: blue; /* Change the color of the entire h2 to blue */
+}
+
+.companies h2 .highlight {
+    color: blue; /* Ensure the span inside h2 is also blue */
+}
+/* .companies h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+} */
+
+.company-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.company-logos img {
+    width: 120px;
+    height: auto;
+    max-width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.company-logos img:hover {
+    transform: scale(1.1);
+}
+
+.more {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #2912d9;
+}
+
+/* Footer Section */
+.footer {
+    background:#6674CC; /* Dark background for footer */
+    padding: 60px 20px;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    text-align: left;
+}
+
+.footer-logo h2 {
+    font-size: 28px;
+}
+
+.black-text {
+    color: white;
+    font-weight: bold;
+}
+
+.blue-text {
+    color: #D3D3D3;
+    font-weight: bold;
+}
+
+.footer-links, .footer-contact, .footer-social {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-links h3, .footer-contact h3, .footer-social h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 10px 0;
+}
+
+.footer-links ul li a, .footer-contact p a, .social-link {
+    text-decoration: none;
+    color: #D3D3D3; /* Link color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover, .footer-contact p a:hover, .social-link:hover {
+    color: #364bc5;
+}
+
+.footer-contact p, .social-link {
+    margin: 10px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+    color: #111bd9;
+}
